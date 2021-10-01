@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        id: ID
+        created_at: 登録日時
+        updated_at: 更新日時
+        isbn: 国際標準図書番号
+        title: 題名
+        price: 価格
+        publich: 著者
+        publiched: 出版日
+        cd: 購入
