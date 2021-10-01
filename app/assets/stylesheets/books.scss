@@ -1,0 +1,190 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.scroll {
+  overflow-x: hidden;
+}
+
+.books {
+  position: relative;
+  left: 40vw;
+}
+
+.nyasocom2 {
+  position: relative;
+  left: 35vw;
+}
+
+.sns_logo {
+  position: relative;
+  top: -0.25vw;
+  left: 46vw;
+}
+
+.left {
+  position: relative;
+  top: 3vw;
+  left: 10vw;
+}
+
+.left_search {
+  position: relative;
+  top: 2vw;
+  left: 8.5vw;
+}
+
+.left_search_icon {
+  position: relative;
+  top: 2vw;
+  left: 10.5vw;
+}
+
+.right {
+  position: absolute;
+  top: 1vw;
+  left: 70vw;
+}
+
+.timer {
+  position: absolute;
+  top: 0.25vw;
+  left: 57vw;
+}
+
+.shelf {
+  position: relative;
+  top: 0vw;
+  padding-left: 10vw;
+}
+
+.leaf {
+  top: 8vw;
+  position: relative;
+  left: 40vw;
+}
+
+.seep {
+  top: 8vw;
+  position: relative;
+  left: 40vw;
+}
+
+.sleep {
+  top: 8vw;
+  position: relative;
+  left: 40vw;
+}
+
+.loginf {
+  top: 6vw;
+  position: relative;
+  left: 17vw;
+}
+
+.logins {
+  top: 3vw;
+  position: relative;
+  left: 33vw;
+}
+
+.sponsor {
+  position: absolute;
+  top: 4vw;
+  left: 67vw;
+}
+
+.silver {
+  position: absolute;
+  top: 5.5vw;
+  left: 60vw;
+  animation: rotate-anime 3s linear infinite;
+}
+
+.pythonista {
+  position: absolute;
+  top: 5.5vw;
+  left: 52.5vw;
+  animation: rotate-anime_y 3s linear infinite;
+}
+
+.pyruby {
+  position: absolute;
+  top: 5.5vw;
+  left: 45vw;
+  animation: rotate-anime 3s linear infinite;
+}
+
+.attach {
+  pointer-events: auto;
+}
+
+.zukkii {
+  position: absolute;
+  top: 5.5vw;
+  left: 37vw;
+  animation: rotate-anime_y 3s linear infinite;
+}
+
+@keyframes rotate-anime {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-anime_y {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+:root {
+  --bg: #fff;
+  --fg: #333;
+}
+
+label span {
+  font-size: 2rem;
+}
+
+.switch-presentation {
+  position: relative;
+  padding: 0 1rem 1rem;
+  top: 0vw;
+  left: 0vw;
+}
+
+.moon {
+  visibility: hidden;
+  position: relative;
+}
+
+input#dark:checked ~ .switch-presentation {
+  --bg: #000080;
+  --fg: #fff;
+}
+
+input#dark:checked ~ .switch-presentation .moon {
+  visibility: visible;
+}
+
+input#dark:checked ~ .switch-presentation .day {
+  visibility: hidden;
+  position: absolute;
+}
+
+.switch-presentation {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+input[id="dark"] {
+  visibility: hidden;
+  position: absolute;
+}

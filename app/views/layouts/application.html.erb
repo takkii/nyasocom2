@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Books Library</title>
+  <%= favicon_link_tag 'hozukicon.ico', skip_pipeline: true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  <%= csrf_meta_tag %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- %= javascript_pack_tag 'hello_typescript' % -->
+</head>
+<body>
+<input type="checkbox" id="dark" name="dark">
+<div class="switch-presentation">
+  <label for="dark"><span class="day">&#9748;</span><span class="moon">&#9730;</span></label>
+  <div class="content">
+    <div class="scroll">
+      <div id="container">
+        <div class="attach">
+          <div id="header">
+            <div id="main-navigation">
+              <ul class="wat-cf"></ul>
+            </div>
+          </div>
+          <div id="wrapper" class="wat-cf">
+            <div class="flash">
+              <% flash.each do |type, message| -%>
+                <div class="message <%= type %>">
+                  <p>
+                    <%= message %>
+                  </p>
+                </div>
+              <% end -%>
+            </div>
+            <div id="main">
+              <%= yield %>
+              <div id="footer">
+                <div class="block">
+                  <div class="books">
+                    <p> Copyright &copy; 2018 - <%= Time.now.year %> Takayuki, Kamiyama. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class = "sns_logo">
+            <a href="https://twitter.com/takkii"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/takkii/nyasocom2"><i class="fab fa-github"></i></a>
+          </div>
+          <div class="nyasocom2">
+            <p><b> Not Yet Another Software design of Computer 2 powered by Ruby on Rails 6 </b></p>
+          </div>
+            <div id="sidebar">
+              <%= yield :sidebar %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

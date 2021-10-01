@@ -1,0 +1,17 @@
+<div class="left">
+	  <%= form_tag(books_path, method: "get") do %>
+		<%= text_field_tag :search %>
+		<%= submit_tag '検索', :name => nil %>
+	  <% end %>
+
+	  <ul><% @books.each do |book| %>
+		<li>
+		  <%= link_to book.title, book %>
+		  <%= book.created_at %>
+		  <%= book.status %>
+		</li>
+		<%= link_to "編集", edit_book_path(book) %>
+		<%= link_to "削除", book, method: :delete %>
+		<% end %>
+	  </ul>
+</div>

@@ -1,0 +1,1 @@
+DELETE FROM books WHERE picture = "写真ファイル名.拡張子";
