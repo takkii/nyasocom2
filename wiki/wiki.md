@@ -169,6 +169,7 @@ sudo ln -s /var/lib/mysql/mysql.sock /tmp/mysql.sock
 
 ※ 自分の環境では、PCを再起動後もう一度同じ手順でつながりました。
 
+# RockyLinux
 # Can’t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock’ (111)
 sudo genie -i
 # Ctrl+Cのあと繰り返し
@@ -176,7 +177,7 @@ genie -s
 sudo systemctl start mysqld
 # sudo systemctl enable mysqld
 
-
+※ WSL2では2つのディストロでmysqlプロセスは起動できないみたいです。
 ----------------
 # Sakura VPS
 ----------------
