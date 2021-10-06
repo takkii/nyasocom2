@@ -25,13 +25,6 @@ _nyasocomのRails版_
 ※ wsl branch → ubuntu20.04(wsl)
 ```
 
-<s>※ Need MySQL and Mroonga.</s>
-
-> gistでmroongaの環境構築をメモをとり書いていたのですが、治せないエラーに遭遇して急きょ検索機能を作り替えました。
-DBとRailsで実装したので、前回(mroonga依存時)と同じ動作で依存がなくなり環境構築しやすくなりました。
-
-※mroonga独自の機能は使えなくなったのは残念です。
-
 ### ログインするためには
 
 ```markdown
@@ -55,21 +48,6 @@ password: <%= Settings.database.password %>
 database:
   password: "Your_Local_MySQL_Password"
 ```
-
-<s>環境構築</s>
-
-<s>rails g config:install</s>
-
-<s>cp settings.sample.yml config/settings.yml</s>
-
-<s>gmail:</s>
-  <s>user_name: "Your_Gmail_Address"</s>
-  <s>password: "Your_Gmail_Password"</s>
-
-<s>cp settings.sample.local.yml config/settings.local.yml</s>
-
-<s>database:</s>
-  <s>password: "Your_Local_MySQL_Password"</s>
 
 ### Google セキュリティ管理
 
@@ -128,21 +106,6 @@ npm install -g yarn
 yarn add jquery
 yarn add bootswatch@4.5.2
 ```
-
-<s>### mroonga 環境構築</s>
-
-<s>_※ MacOS は自作 gist を参考、または mroonga を homebrew でインストールします_</s>
-
-[mroonga(mac)](https://gist.github.com/takkii/5b6110b6643e28593842102c39fba0e5)
-
-<s>_※ Windows は mariaDB で既存 mroonga が用意されています_</s>
-
-[mroonga(windows)](https://github.com/mroonga/mroonga/releases)
-
-<s>_※ Linux カーネルは、公式にドキュメントがあります_</s>
-
-[mroonga(Linuxkernel)](https://mroonga.org/ja/docs/install.html)
-
 
 ### 鬼灯 ( 環境構築 )
 
@@ -213,12 +176,20 @@ genie -s
 sudo systemctl start mysqld
 # sudo systemctl enable mysqld
 
+
 ----------------
+# Sakura VPS
+----------------
+
+rails s -b 0.0.0.0
+
 ```
+
+<s>sudo ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock</s>
 
 > 管理画面URL
 
-http://localhost:3000/admin
+http://tk2-410-46434.vs.sakura.ne.jp:3000/admin
 
 > ダンプ、リストア
 
@@ -237,4 +208,4 @@ rails db:dump_reset_restore
 
 ### 鬼灯のレイアウト
 
-![鬼灯レイアウト(傘挙動 青→白)](https://github.com/takkii/nyasocom_beta/blob/main/public/images/hozuki.gif)
+![鬼灯レイアウト(傘挙動 青→白)](https://github.com/takkii/nyasocom2/blob/main/public/images/hozuki.gif)
