@@ -53,6 +53,11 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  # SCSS view moving changes.
+  config.assets.compile = true #動的コンパイルを有効化
+  config.assets.css_compressor = :sass # sass-rails gemを使用している場合コメントアウトを外す
+  config.public_file_server.enabled = true # publicディレクトリ以下のアセットを返す設定
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

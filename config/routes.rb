@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :blogs
   mount ActionCable.server => '/cable'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -11,5 +10,7 @@ Rails.application.routes.draw do
 
   resources :tops, only: [:home]
   resources :books
+  get 'notification/list'
+  resources :blogs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
