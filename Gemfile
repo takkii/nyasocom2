@@ -61,7 +61,7 @@ gem 'kaminari'
 gem 'rails_admin'
 
 # markdown
-gem 'redcarpet', '~> 2.3.0'
+gem 'redcarpet', '~> 3.5.1'
 gem 'coderay'
 
 # Reduces boot times through caching; required in config/boot.rb
