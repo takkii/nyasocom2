@@ -334,6 +334,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redcarpet (2.3.0)
     regexp_parser (2.1.1)
     remotipart (1.4.4)
     responders (3.0.1)
@@ -440,6 +441,7 @@ DEPENDENCIES
   cancan
   capybara (>= 2.15, < 4.0)
   carrierwave
+  coderay
   coffee-rails (~> 5.0.0)
   config
   cucumber
@@ -458,9 +460,10 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   nokogiri (>= 1.12.5)
   puma
-  rails
+  rails (>= 6.1.4.1)
   rails-i18n (~> 6.0)
   rails_admin
+  redcarpet (~> 2.3.0)
   rmagick
   rspec
   rspec-rails

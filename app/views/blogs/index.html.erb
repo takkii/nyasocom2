@@ -1,0 +1,36 @@
+<div class="right">
+  <%= link_to 'トップページ', root_path, class: "btn btn-primary" %> <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %> <%= link_to 'ブログ', blogs_path, class: "btn btn-primary" %> <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %> <% if user_signed_in? %><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<h2>更級日記 ~ nyasocom2編 ~ </h2>
+
+  <%= link_to '新しい記事を追加', new_blog_path %>
+
+<br />
+
+<div class="left_blog">
+<table width="85%">
+  <thead>
+    <tr>
+      <th>日時</th>
+      <th>タイトル</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.days %></td>
+        <td><%= blog.title %></td>
+        <td><div align="right"><%= link_to '閲覧', blog %></div></td>
+        <td><div align="center"><%= link_to '編集', edit_blog_path(blog) %></div></td>
+        <td><div align="left"><%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' } %></div></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>

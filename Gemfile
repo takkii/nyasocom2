@@ -60,6 +60,10 @@ gem 'config'
 gem 'kaminari'
 gem 'rails_admin'
 
+# markdown
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
