@@ -7,6 +7,10 @@
 <h2>さらしな日記 ~ nyasocom2編 ~ </h2>
 
 <br />
+<div class="left_search_icon">
+  <p>表示 : <%= @blogs.count %> 行 (データ数)</p>
+</div>
+<br />
 
 <div class="left_search">
   <ul><%= form_tag(blogs_path, method: "get") do %>
