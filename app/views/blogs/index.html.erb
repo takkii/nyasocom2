@@ -1,5 +1,5 @@
 <div class="right">
-  <%= link_to 'トップページ', root_path, class: "btn btn-primary" %> <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %> <%= link_to 'ブログ', blogs_path, class: "btn btn-primary" %> <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %>
+  <%= link_to 'トップページ', root_path, class: "btn btn-primary" %> <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %> <%= link_to '図書室', books_url, class: "btn btn-primary" %> <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %>
   <% if user_signed_in? %><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
   <% end %>
 </div>
