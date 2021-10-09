@@ -26,7 +26,13 @@ module ApplicationHelper
     end
 
     def markdown(text)
-        html_render = HTMLwithCoderay.new(filter_html: true, hard_wrap: true)
+        extensions = {
+          filter_html: true,
+          hard_wrap: true,
+          space_after_headers: true,
+          link_attributes: { rel: 'nofollow', target: '_blank' }
+        }
+
         options = {
             autolink: true,
             space_after_headers: true,
@@ -37,9 +43,10 @@ module ApplicationHelper
             xhtml: true,
             lax_html_blocks: true,
             strikethrough: true,
-            link_attributes: { rel: 'nofollow', target: '_blank' }
         }
-        markdown = Redcarpet::Markdown.new(html_render, options)
-        markdown.render(text)
+
+        renderer = Redcarpet::Render::HTML.new(extensions)
+        @markdown = Redcarpet::Markdown.new(renderer, options)
+        @markdown.render(text).html_safe
     end
 end
