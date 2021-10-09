@@ -26,27 +26,21 @@ module ApplicationHelper
     end
 
     def markdown(text)
-        extensions = {
-          filter_html: true,
-          hard_wrap: true,
-          space_after_headers: true,
-          link_attributes: { rel: 'nofollow', target: '_blank' }
-        }
+        html_render = HTMLwithCoderay.new(filter_html: true, link_attributes: { rel: 'nofollow', target: '_blank' })
 
         options = {
-            autolink: true,
-            space_after_headers: true,
-            no_intra_emphasis: true,
-            fenced_code_blocks: true,
-            tables: true,
-            hard_wrap: true,
-            xhtml: true,
-            lax_html_blocks: true,
-            strikethrough: true,
+          autolink: true,
+          space_after_headers: true,
+          no_intra_emphasis: true,
+          fenced_code_blocks: true,
+          tables: true,
+          hard_wrap: true,
+          xhtml: true,
+          lax_html_blocks: true,
+          strikethrough: true,
         }
 
-        renderer = Redcarpet::Render::HTML.new(extensions)
-        @markdown = Redcarpet::Markdown.new(renderer, options)
-        @markdown.render(text).html_safe
+        markdown = Redcarpet::Markdown.new(html_render, options)
+        markdown.render(text).html_safe
     end
 end
