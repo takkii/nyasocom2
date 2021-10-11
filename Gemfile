@@ -64,6 +64,10 @@ gem 'rails_admin'
 gem "redcarpet", ">= 3.5.1"
 gem 'coderay'
 
+# erb-linter
+gem 'erb_lint', require: false
+gem "better_html"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
