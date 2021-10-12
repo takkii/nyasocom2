@@ -9,3 +9,10 @@ linters:
       - 'text/html'
     allow_blank: false
     disallow_inline_scripts: false
+  ErbSafety:
+    enabled: true
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
