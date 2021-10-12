@@ -1,11 +1,11 @@
 ---
 EnableDefaultLinters: true
 linters:
-  ErbSafety:
+  AllowedScriptType:
     enabled: true
-    better_html_config: .better-html.yml
-  Rubocop:
-    enabled: true
-    rubocop_config:
-      inherit_from:
-        - .rubocop.yml
+    allowed_types:
+      - 'application/json'
+      - 'text/javascript'
+      - 'text/html'
+    allow_blank: false
+    disallow_inline_scripts: false
