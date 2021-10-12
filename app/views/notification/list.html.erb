@@ -9,6 +9,8 @@
 <br/>
 
 <% @blogs.each do |blog| %>
+  <p><h2><%= blog.days %></h2></p>
+  <p><h3><%= blog.title %></h3></p>
   <p><%= markdown(blog.memo).html_safe %></p>
 <% end %>
 
