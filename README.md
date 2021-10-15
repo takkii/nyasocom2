@@ -6,3 +6,5 @@
 <br />
 <div style="text-align: center;">にゃそこん2、始動 !</div>
 </div>
+
+#### nyasocom2_winよりrails側の部分は適宜マージする予定です！
