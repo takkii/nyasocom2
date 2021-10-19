@@ -21,4 +21,19 @@ namespace :db do
     Rake::Task['db:migrate:reset'].invoke
     Rake::Task['db:restore'].invoke
   end
+
+  desc 'Default database command'
+  task default_db: %i[environment load_config] do
+    Rake::Task['db:create'].invoke
+    Rake::Task['db:migrate'].invoke
+    Rake::Task['db:seed'].invoke
+  end
+
+  desc 'create and migrate and seed'
+  task my_default_db: %i[environment load_config] do
+    Rake::Task['db:drop'].invoke
+    Rake::Task['db:create'].invoke
+    Rake::Task['db:migrate'].invoke
+    Rake::Task['db:seed'].invoke
+  end
 end
