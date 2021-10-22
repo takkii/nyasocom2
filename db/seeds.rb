@@ -37,8 +37,8 @@ Book.create(:isbn=>'9784295003038',:title=>'GitLab実践ガイド',:price=>'2700
 Book.create(:isbn=>'9784844331568',:title=>'改訂新版 基礎Ruby on Rails',:price=>'3200',:publish=>'黒田努',:published=>'2012/03/05',:cd=>'true')
 Book.create(:isbn=>'9784295004608',:title=>'改訂4版 基礎 Ruby on Rails',:price=>'3780',:publish=>'黒田努',:published=>'2018/09/07',:cd=>'true')
 Book.create(:isbn=>'9784844335924',:title=>'実践Ruby on Rails 4',:price=>'3780',:publish=>'黒田努',:published=>'2014/05/23',:cd=>'true')
-#Book.create(:isbn=>'',:title=>'',:price=>'',:publish=>'',:published=>'',:cd=>'true')
 
+#Book.create(:isbn=>'',:title=>'',:price=>'',:publish=>'',:published=>'',:cd=>'true')
 
 Blog.create(:days=>'2021/10/8', :title=>'初投稿、祝ブログ機能。', :memo=>'### ブログ機能が付きました。
 
@@ -348,6 +348,30 @@ Blog.create(:days=>'2021/10/15', :title=>'PostgreSQLの書籍購入', :memo=>'##
 ```
 
 #### 近況と記録。
+')
+
+Blog.create(:days=>'2021-10-15', :title=>'PostgreSQL', :memo=>'### 考察
+
+> PostgreSQLでWindows環境構築ができた。
+
+```Markdown
+・ RubyMineでデバッグをWindows環境のRubyInstaller2でもできる。
+・ PostgreSQLでダンプリセットリストアシードコマンドが使える。
+・ IDEで書くことができるので書きやすい、治しやすい。
+```
+
+※ PostgreSQLにいずれは移行する。
+')
+
+Blog.create(:days=>'2021-10-15', :title=>'MySQL', :memo=>'### 懸念
+
+```markdown
+・ 環境構築に時間がかかる。
+・ Windowsではmysql2が動かない。
+・ さくらVPSでMySQLがあるが、PostgreSQLのRails側をマージする予定である。
+```
+
+※ しばらくMySQLも残しておく。
 ')
 
 # Blog.create(:days=>'', :title=>'', :memo=>'')
