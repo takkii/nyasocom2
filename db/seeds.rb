@@ -272,16 +272,22 @@ http://tk2-410-46434.vs.sakura.ne.jp:3000/admin
 # destroyするときのために
 rails g task db
 
-#※ リストア無し
+# ダンプ
+rails db:dump
+
+# リストア
+rails db:restore
+
+#※ ダンプ、リセット
 rails db:dump_reset
 
-#※ リストア有り
+#※ ダンプ、リセット、リストア
 rails db:dump_reset_restore
 
-# デフォルト
+# デフォルト (作成、マイグレーション、シードデータ投入)
 rails db:default_db
 
-# データベース入れ直しデフォルト
+# DB操作 (削除、作成、マイグレーション、シードデータ投入)
 rails db:my_default_db
 ```
 
