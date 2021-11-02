@@ -2,8 +2,10 @@ require 'date'
 
 namespace :db do
   Onetoday = Date.today
+  dump_logs = Dir.mkdir('backup', perm = 0o777) unless FileTest.exist?('backup')
   desc 'Dump the database to backup/dbname.dump'
   task my_dump_backup: %i[environment load_config] do
+    dump_logs
     sh "mysqldump -u root -p -x --all-databases > backup/#{Onetoday}_nyasocom2_backup.dump"
   end
 
