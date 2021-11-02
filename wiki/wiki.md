@@ -147,6 +147,22 @@ Ctrl + C
 TypeScriptが必要になれば戻します。
 
 ----------------
+# MacOS big sur
+----------------
+
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
+sudo touch /tmp/mysql.sock
+sudo chown takkii /tmp/mysql.sock
+
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (38)
+sudo mysql.server start
+
+自動起動
+brew services start mysql
+
+※ sudoはないようにできるかも。
+
+----------------
 #wsl (ubuntu)
 ----------------
 sudo service mysql start
@@ -178,6 +194,14 @@ sudo systemctl start mysqld
 # sudo systemctl enable mysqld
 
 ※ WSL2では2つのディストロでmysqlプロセスは起動できないみたいです。
+
+rmagick
+sudo dnf --enablerepo=powertools install lcms2-devel
+sudo dnf --enablerepo=powertools install ghostscript-devel
+sudo dnf --enablerepo=powertools install openexr-devel
+sudo dnf --enablerepo=powertools install jasper-devel
+sudo yum -y install ImageMagick ImageMagick-devel
+
 ----------------
 # Sakura VPS
 ----------------
@@ -198,11 +222,26 @@ http://tk2-410-46434.vs.sakura.ne.jp:3000/admin
 # destroyするときのために
 rails g task db
 
-#※ リストア無し
+# 定期的にバックアップ
+rails db:my_dump_backup
+
+# ダンプ
+rails db:dump
+
+# リストア
+rails db:restore
+
+#※ ダンプ、リセット
 rails db:dump_reset
 
-#※ リストア有り
+#※ ダンプ、リセット、リストア
 rails db:dump_reset_restore
+
+# デフォルト (作成、マイグレーション、シードデータ投入)
+rails db:default_db
+
+# DB操作 (削除、作成、マイグレーション、シードデータ投入)
+rails db:my_default_db
 ```
 
 ※ ダンプ、リストアの対象、自前MySQLのDBすべてです。
