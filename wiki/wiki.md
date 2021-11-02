@@ -225,6 +225,9 @@ rails g task db
 # 定期的にバックアップ
 rails db:my_dump_backup
 
+# 手動でリストア
+mysql -u root -p < backup/戻す対象の日付_nyasocom2_backup.dump
+
 # ダンプ
 rails db:dump
 
