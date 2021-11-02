@@ -4,12 +4,12 @@ namespace :db do
   Onetoday = Date.today
   desc 'Dump the database to backup/dbname.dump'
   task my_dump_backup: %i[environment load_config] do
-    sh "mysqldump --single-transaction -u root -p -x --all-databases > backup/#{Onetoday}_nyasocom2_backup.dump"
+    sh "mysqldump -u root -p -x --all-databases > backup/#{Onetoday}_nyasocom2_backup.dump"
   end
 
   desc 'Dump the database to tmp/dbname.dump'
   task dump: %i[environment load_config] do
-    sh "mysqldump --single-transaction -u root -p nyasocom_beta_development > tmp/nyasocom_beta_development.dump"
+    sh "mysqldump -u root -p nyasocom_beta_development > tmp/nyasocom_beta_development.dump"
   end
 
   desc 'Restore the database from tmp/dbname.dump'
