@@ -380,4 +380,16 @@ Blog.create(:days=>'2021-10-15', :title=>'MySQL', :memo=>'### 懸念
 ※ しばらくMySQLも残しておく。
 ')
 
+Blog.create(:days=>'2021-11-26', :title=>'MySQL2', :memo=>'### 達成
+
+```markdown
+・ MySQLのコネクタ、mysql2がWindowsで動作できた。wikiに記録してある。
+・ ローカル環境で、にゃそこん2を構築できるので反映も楽になった。
+・ MySQLとPostgreSQLの環境構築ができるのは良いことである。
+・ 2つのDB間、動作もほぼ同じになっている。
+```
+
+※ MySQLとPostgreSQLでにゃそこん２を作っていく。
+')
+
 # Blog.create(:days=>'', :title=>'', :memo=>'')
