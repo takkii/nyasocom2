@@ -9,16 +9,23 @@ _nyasocomのRails版_
 ### Web Library System Name is '鬼灯'
 
 ```markdown
-- Ruby version 3.0.1
+- Ruby version 3.0.1 ~
 
   ※ GitHubのHEAD（v1.1.5 ~）では、mroongaの依存をなくしました。
 
-- Configuration Rails 6.1.3.2
+- Configuration Rails 6.1.3.2 ~
+```
 
-動作確認
+> 動作確認
 
-- Windows ×
-※ 起動時、no implicit conversion of Hash into Integerを踏んでerror画面へ変移するため。
+<s>- Windows ×</s>
+<s>※ 起動時、no implicit conversion of Hash into Integerを踏んでerror画面へ変移するため。</s>
+
+```markdown
+-Windows ○
+RubyInstaller2 + MSYS2で動作確認
+他に、Windows版MySQL8を入れる必要あり。他、依存ライブラリも。
+下記に、mysql2を入れる手順表示。
 
 - UNIX系統 (MacOS and Ubuntu 20.04(wsl) ) ○
 ※ main and develop branch → MacOS
