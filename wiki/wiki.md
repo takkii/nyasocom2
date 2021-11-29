@@ -256,6 +256,12 @@ rails db:my_default_db
 
 ※ ダンプ、リストアの対象、自前MySQLのDBすべてです。
 
+### for example
+
+```markdown
+gem install mysql2 --platform=ruby -- '--with-mysql-lib="C:\Users\sudok\mysql-connector-c-6.1.11-win32\lib" --with-mysql-include="C:\Users\sudok\mysql-connector-c-6.1.11-win32\include" --with-mysql-dir="C:\Users\sudok\mysql-connector-c-6.1.11-win32"'
+```
+
 ### 鬼灯のレイアウト
 
 ![鬼灯レイアウト(傘挙動 青→白)](https://github.com/takkii/nyasocom2/blob/main/public/images/hozuki.gif)
