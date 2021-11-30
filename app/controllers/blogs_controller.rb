@@ -3,7 +3,6 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogger = Blog.all
     @blogs = Kaminari.paginate_array(Blog.search(params[:search])).page(params[:page])
   end
 
