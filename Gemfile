@@ -17,7 +17,7 @@ gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 
 # javascript
-gem 'mini_racer'
+gem 'execjs'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 
@@ -41,12 +41,10 @@ gem 'rmagick'
 # gem 'capistrano-rails', group: :development
 # gem 'rails-i18n', '~> 5.1'
 
-gem 'bootstrap-sass'
-gem 'bootswatch-rails'
+gem 'bootstrap'
+gem 'bootswatch'
 
 gem 'mimemagic', '~> 0.3.10'
-
-gem 'bootswatch'
 gem 'rails-i18n', '~> 6.0'
 
 gem 'devise'
@@ -102,3 +100,6 @@ group :test do
   # new rubygems webdrivers
   gem 'webdrivers'
 end
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
