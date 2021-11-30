@@ -7,12 +7,12 @@
 <h2> さらしなにっき ~ にゃそこん２ ~ </h2>
 <br/>
 <% @blogs.each do |blog| %>
-<p>
+<p> 
 <strong>
 <h2><%= blog.days %></h2>
 </strong>
 </p>
-<p>
+<p> 
 <strong>
 <h3><%= blog.title %></h3>
 </strong>
@@ -21,7 +21,6 @@
 <td><div align="left"><%= link_to '新規作成', new_blog_path, class: "btn btn-primary" %> <%= link_to '閲覧', blog, class: "btn btn-primary" %> <%= link_to '編集', edit_blog_path(blog), class: "btn btn-primary" %> <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-primary" %></div></td>
 <% end %>
 <br/>
-<%= link_to '一覧へ戻る', blogs_path, class: "btn btn-primary" %> 
-<br/>
+<%= link_to '一覧へ戻る', blogs_path, class: "btn btn-primary" %> <br/>
 <div class="left"> <%= paginate @blogs %> </div>
 <br/>
