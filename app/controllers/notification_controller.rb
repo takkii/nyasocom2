@@ -1,5 +1,5 @@
 class NotificationController < BlogsController
   def list
-    @blogs = Blog.all
+    @blogs = Kaminari.paginate_array(Blog.search(params[:search])).page(params[:page])
   end
 end
