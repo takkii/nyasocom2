@@ -2,4 +2,5 @@
 <p> <strong>日付: </strong> <%= @blog.days %> </p>
 <p> <strong>タイトル: </strong> <%= @blog.title %> </p>
 <p> <strong>本文: </strong> <%= markdown(@blog.memo).html_safe %> </p>
+<p> <strong>写真: </strong> <%= image_tag(@blog.image.url) if @blog.image.present? %> </p>
 <%= link_to '編集', edit_blog_path(@blog), class: "btn btn-primary" %> <%= link_to '戻る', blogs_path, class: "btn btn-info" %> 
