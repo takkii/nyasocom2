@@ -15,6 +15,7 @@ ja:
     published: "出版日:"
     cd: "購入:"
     picture: "写真:"
+    image: "写真:"
     days: "日付:"
     memo: "本文:"
   date:
