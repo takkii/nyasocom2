@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :blogs
+      resources :books
+
+      root to: "users#index"
+    end
+
   mount ActionCable.server => '/cable'
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :admin_users
+  
   devise_for :users
-
   root 'top#home'
-  #root 'books#index'
-
   resources :tops, only: [:home]
   resources :books
   get 'notification/list'

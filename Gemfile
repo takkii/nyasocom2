@@ -37,9 +37,9 @@ gem 'font-awesome-rails'
 
 gem 'carrierwave'
 gem 'rmagick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# gem 'rails-i18n', '~> 5.1'
 
 gem 'bootstrap'
 gem 'bootswatch'
@@ -51,11 +51,14 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-gem "nokogiri"
-
+# admin
+gem "administrate"
 gem 'cancan'
-gem 'config'
+
+# pagenate
+gem "nokogiri"
 gem 'kaminari'
+gem 'config'
 
 # markdown
 gem "redcarpet", ">= 3.5.1"
@@ -63,7 +66,6 @@ gem 'coderay'
 
 # erb-linter
 gem 'erb_lint', require: false
-gem "better_html"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -100,5 +102,6 @@ group :test do
   gem 'webdrivers'
 end
 
+# windows env
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
