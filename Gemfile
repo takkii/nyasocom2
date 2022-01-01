@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.0'
+ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 6.1.4.4'
@@ -56,7 +56,6 @@ gem "nokogiri"
 gem 'cancan'
 gem 'config'
 gem 'kaminari'
-gem 'rails_admin'
 
 # markdown
 gem "redcarpet", ">= 3.5.1"
