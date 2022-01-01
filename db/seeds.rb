@@ -10,6 +10,7 @@
 #   Book.create(:isbn=>'',:title=>'',:price=>'',:publish=>'',:published=>'',:cd=>'true',:picture=>'.app/assets/images/')
 #
 
+# Book
 Book.create(:isbn=>'9784798053639',:title=>'Pythonプログラミング逆引き大全',:price=>'2600',:publish=>'金城俊哉',:published=>'2018/04/01',:cd=>'true')
 Book.create(:isbn=>'9784863541122',:title=>'Java逆引きハンドブック',:price=>'4000',:publish=>'株式会社エイベル',:published=>'2012/10/27',:cd=>'true')
 Book.create(:isbn=>'9784863540224',:title=>'Ruby逆引きハンドブック',:price=>'3800',:publish=>'るびきち',:published=>'2009/05/25',:cd=>'true')
@@ -393,3 +394,4 @@ Blog.create(:days=>'2021-11-26', :title=>'MySQL2', :memo=>'### 達成
 ')
 
 # Blog.create(:days=>'', :title=>'', :memo=>'')
+
