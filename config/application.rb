@@ -23,5 +23,8 @@ module NyasocomAct2
     config.time_zone = 'Tokyo'
     config.generators.javascript_engine = :js
     config.active_record.default_timezone = :local
+
+    # warning
+    ActiveSupport::Deprecation.silenced = true if Rails.version == '6.1.4.4'
   end
 end
