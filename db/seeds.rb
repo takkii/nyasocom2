@@ -470,4 +470,19 @@ Blog.create(:days=>'2022-1-4', :title=>'🍬 新年開始', :memo=>'### 明け�
 以上です。
 ')
 
+Blog.create(:days=>'2022-1-5', :title=>'did_you_meanに対処🚆', :memo=>'### 変更点
+
+```markdown
+Calling `DidYouMean::SPELL_CHECKERS.merge!(error_name => spell_checker)' has been deprecated. Please call `DidYouMean.correct_error(error_name, spell_checker)' instead.
+```
+
+これに対応しました。
+
+> Qiitaに投稿
+
+[Railsの謎メッセージ対処](https://qiita.com/takkii/items/7d4d1279b5f9ad75f647)
+
+#### 文章化成功💡
+')
+
 # Blog.create(:days=>'', :title=>'', :memo=>'')
