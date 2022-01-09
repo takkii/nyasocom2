@@ -3,10 +3,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# ruby_version
 ruby '3.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 6.1.4.4'
+gem 'rails', '>= 7.0.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
@@ -16,7 +17,7 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
-# javascript
+# javascript use windows env.
 gem 'execjs'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
@@ -33,18 +34,22 @@ gem 'font-awesome-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# image controll
 gem 'carrierwave'
 gem 'rmagick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# css layout
 gem 'bootstrap'
 gem 'bootswatch'
 
+# japanese env
 gem 'mimemagic', '~> 0.3.10'
-gem 'rails-i18n', '~> 6.0'
+gem 'rails-i18n', '~> 7.0.1'
 
+# devise
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
@@ -103,6 +108,6 @@ group :test do
   gem 'webdrivers'
 end
 
-# windows env
+# use windows env
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'tzinfo-data' if Gem.win_platform?
