@@ -5,7 +5,7 @@ class Blog < ApplicationRecord
 
   # seach method
   def self.search(search)
-    return Blog.all unless search
+    return Blog.preload(@blogs).all unless search
     Blog.where(['title LIKE ?', "%#{search}%"])
   end
 end 

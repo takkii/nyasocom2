@@ -7,7 +7,7 @@ class Book < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   def self.search(search)
-    return Book.all unless search
+    return Book.eager_load(@books).all unless search
     Book.where(['title LIKE ?', "%#{search}%"])
   end
 end

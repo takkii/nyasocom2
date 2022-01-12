@@ -91,7 +91,7 @@
           <td>
             <div align="center">
               <% if book.price.present? %>
-                <%= (book.price).to_s(:delimited) + "円" + " + 税(10%)" %>
+                <%= (book.price).to_formatted_s(:delimited) + "円" + " + 税(10%)" %>
               <% else %>
                 価格 (¥)はありません
               <% end %>
