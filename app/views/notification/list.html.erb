@@ -18,6 +18,11 @@
 </strong>
 </p>
 <p> <strong> <%= image_tag(blog.image.url) if blog.image.present? %> </strong> </p>
+<p> 
+<strong>
+<div class="video-player"> <%= video_tag blog.video.url, autoplay: false, multiple: true, muted: false, controls: true , :size => "700x700" if blog.video.present? %> </div>
+</strong>
+</p>
 <p><%= markdown(blog.memo).html_safe %></p>
 <td><div align="left"><%= link_to '新規作成', new_blog_path, class: "btn btn-success btn-sm" %> <%= link_to '閲覧', blog, class: "btn btn-primary btn-sm" %> <%= link_to '編集', edit_blog_path(blog), class: "btn btn-info btn-sm" %> <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-warning btn-sm" %></div></td>
 <% end %>
