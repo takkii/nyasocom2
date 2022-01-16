@@ -98,6 +98,9 @@ group :development do
   gem 'rspec-rails'
 
   gem 'selenium-webdriver'
+
+  # mail
+  gem 'letter_opener_web'
 end
 
 group :test do
