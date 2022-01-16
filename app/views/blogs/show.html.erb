@@ -3,4 +3,6 @@
 <p> <strong>タイトル: </strong> <%= @blog.title %> </p>
 <p> <strong>本文: </strong> <%= markdown(@blog.memo).html_safe %> </p>
 <p> <strong>写真: </strong> <%= image_tag(@blog.image.url) if @blog.image.present? %> </p>
+<p> <div class="video-player"> <strong>動画: </strong> <%= video_tag @blog.video.url, autoplay: false, multiple: true, muted: false, controls: true , :size => "700x700" if @blog.video.present? %> </div>
+</p>
 <%= link_to '編集', edit_blog_path(@blog), class: "btn btn-primary" %> <%= link_to '戻る', blogs_path, class: "btn btn-info" %> 
