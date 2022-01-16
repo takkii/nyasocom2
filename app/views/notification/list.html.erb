@@ -20,7 +20,7 @@
 <p> <strong> <%= image_tag(blog.image.url) if blog.image.present? %> </strong> </p>
 <p> 
 <strong>
-<div class="video-player"> <%= video_tag blog.video.url, autoplay: false, multiple: true, muted: false, controls: true , :size => "700x700" if blog.video.present? %> </div>
+<div class="video-player"> <%= video_tag blog.video.url, autoplay: false, multiple: true, muted: false, controls: true , width: "50%", height: "50%" if blog.video.present? %> </div>
 </strong>
 </p>
 <p><%= markdown(blog.memo).html_safe %></p>
