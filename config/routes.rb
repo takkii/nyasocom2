@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    mount LetterOpenerWeb::Engine, at: "/mail/letter/web/open/engine"
   end
 
   namespace :admin do
-      resources :users
-      resources :blogs
-      resources :books
+    resources :users
+    resources :blogs
+    resources :books
 
-      root to: "users#index"
-    end
+    root to: "users#index"
+  end
 
   mount ActionCable.server => '/cable'
   
