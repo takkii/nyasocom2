@@ -1,4 +1,6 @@
 class Blog < ApplicationRecord
+  has_one_attached :image
+  has_many_attached :images
 
   # image uploader
   mount_uploader :image, ImageUploader

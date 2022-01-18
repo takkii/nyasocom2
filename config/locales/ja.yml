@@ -16,6 +16,7 @@ ja:
     cd: "購入:"
     picture: "写真:"
     image: "写真:"
+    images: "連続写真:"
     video: "動画:"
     days: "日付:"
     memo: "本文:"
