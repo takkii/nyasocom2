@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  has_one_attached :picture
+
   enum status: {
     '所 持': 0, # possession
     '手放す': 1, # relinquish
