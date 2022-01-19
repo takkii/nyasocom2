@@ -29,9 +29,8 @@
   <% end %>
   </strong> </p>
 <p><%= markdown(blog.memo).html_safe %></p>
-<td><div align="left"><%= link_to '新規作成', new_blog_path, class: "btn btn-success btn-sm" %> <%= link_to '閲覧', blog, class: "btn btn-primary btn-sm" %> <%= link_to '編集', edit_blog_path(blog), class: "btn btn-info btn-sm" %> <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-warning btn-sm" %> <%= link_to('再読込', 'javascript:void(0);', onclick: "window.location.reload();", class: "btn btn-dark btn-sm") %> </div></td>
+<td><div align="left"><%= link_to '新規作成', new_blog_path, class: "btn btn-success btn-sm" %> <%= link_to '閲覧', blog, class: "btn btn-primary btn-sm" %> <%= link_to '編集', edit_blog_path(blog), class: "btn btn-info btn-sm" %> <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-warning btn-sm" %> <%= link_to('再読込', 'javascript:void(0);', onclick: "window.location.reload();", class: "btn btn-dark btn-sm") %> <%= link_to '一覧', blogs_path, class: "btn btn-danger btn-sm" %> </div></td>
 <% end %>
 <br/>
-<%= link_to '一覧へ戻る', blogs_path, class: "btn btn-danger" %> <br/>
 <div class="left"> <%= paginate @blogs %> </div>
 <br/>
