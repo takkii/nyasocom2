@@ -8,10 +8,4 @@ class LikesController < BlogsController
   def destroy
     Like.find_by(user_id: current_user.id, blog_id: params[:id]).destroy
   end
-
-  private
-
-  def blog_params
-    @blog = Blog.find(params[:id])
-  end
 end
