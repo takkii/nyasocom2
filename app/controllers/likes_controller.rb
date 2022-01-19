@@ -1,4 +1,4 @@
-class LikesController < ApplicationController
+class LikesController < BlogsController
   before_action :blog_params
 
   def create
