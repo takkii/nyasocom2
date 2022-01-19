@@ -1,3 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"> <a class="nav-link" href="https://www.vector.co.jp/vpack/browse/person/an060630.html">Vector Profile<span class="sr-only">(current)</span></a> </li>
+      <li class="nav-item"> <a class="nav-link" href="https://standb.herokuapp.com/">nyasocom</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="https://github.com/takkii">GitHub</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="https://gitlab.com/nekoja">GitLab</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="https://bitbucket.org/takkii/">BitBuckets</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="https://takkii.hatenablog.com/">はてなブログ(環境構築)</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="https://rubyist.hatenablog.com/">はてなブログ(作品紹介)</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="https://qiita.com/takkii">Qiita</a> </li>
+    </ul>
+  </div>
+</nav>
 <div class="right"> <%= link_to 'トップページ', root_path, class: "btn btn-primary" %> <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %> <%= link_to '図書室', books_url, class: "btn btn-primary" %> <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %>
   <% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
