@@ -1,4 +1,6 @@
 class LikesController < BlogsController
+  before_action :blog_params
+
   def create
     Like.create(user_id: current_user.id, blog_id: params[:id])
   end
