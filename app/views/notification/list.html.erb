@@ -25,7 +25,7 @@
 </p>
 <p> <strong>
   <% blog.images.each do |image| %>
-  <%= image_tag image, class: "image" %>
+  <%= image_tag image, class: "image", width: '50%', height: '50%' %>
   <% end %>
   </strong> </p>
 <p><%= markdown(blog.memo).html_safe %></p>
