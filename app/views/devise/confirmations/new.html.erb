@@ -1,4 +1,5 @@
-<h2>Resend confirmation instructions</h2>
+<div class="loginc">
+<h2>アカウントをリセット</h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -9,8 +10,15 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+    <%= f.submit "リセットするメールを送信" %>
   </div>
 <% end %>
-
+<br />
 <%= render "devise/shared/links" %>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
