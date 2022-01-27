@@ -2,6 +2,9 @@
   <%= link_to 'トップページ', root_path, class: "btn btn-primary" %> <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %> <%= link_to 'ブログ', blogs_path, class: "btn btn-primary" %> <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %> <% if user_signed_in? %><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
   <% end %>
 </div>
+<div class="nyasocom2_logo2">
+  <%= image_tag 'nyasocom2.jpg', :size => "105x105", skip_pipeline: true %>
+</div>
 
 <div class="silver">
   <%= image_tag 'logo.png', :size => "105x105", skip_pipeline: true %>
