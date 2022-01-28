@@ -1,5 +1,6 @@
 <%- if controller_name != 'sessions' %>
 <%= link_to "ログイン", new_session_path(resource_name) %>
+
 <br />
 <% end -%>
 <br />
@@ -20,3 +21,5 @@
 <%= link_to "%{provider}でログイン #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
 <% end -%>
 <% end -%>
+<div class="nyasocom2_logo3"> <%= image_tag 'nyasocom2.jpg', :size => "300x300", skip_pipeline: true %> </div>
+<div id="sidebar"> <%= yield :sidebar %> </div>
