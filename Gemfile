@@ -22,6 +22,10 @@ gem 'execjs'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 
+# audio
+gem 'audiojs-rails'
+gem 'carrierwave-audio'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

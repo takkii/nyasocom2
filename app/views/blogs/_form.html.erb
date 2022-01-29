@@ -20,6 +20,8 @@
 <br/>
 <div class="field"> <%= form.label :video %> <%= form.file_field :video, :accept => 'video/*' %> </div>
 <br/>
+<div class="field"> <%= form.label :file %> <%= form.file_field :file %> </div>
+<br/>
 <div class="actions">
   <button type="submit" class="btn btn-success">登録</button>
   <%= link_to '閲覧', @blog, class: "btn btn-primary" %> <%= link_to '戻る', blogs_path, class: "btn btn-info" %> <%= link_to '投稿一覧', notification_list_path, class: "btn btn-success" %> </div>

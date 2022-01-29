@@ -18,6 +18,7 @@ ja:
     image: "写真:"
     images: "連続写真:"
     video: "動画:"
+    file: "音楽:"
     days: "日付:"
     memo: "本文:"
   date:
