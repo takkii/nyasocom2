@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2022_01_29_022415) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
     t.string "video"
-    t.string "music"
     t.string "file"
   end
 
