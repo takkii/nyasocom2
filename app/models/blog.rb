@@ -11,6 +11,8 @@ class Blog < ApplicationRecord
 
   # movie uploader
   mount_uploader :video, VideoUploader
+  # music
+  mount_uploader :file, AudioFileUploader
 
   # seach method
   def self.search(search)

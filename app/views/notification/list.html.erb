@@ -24,6 +24,9 @@
 <div class="video-player"> <%= video_tag blog.video.url, autoplay: false, multiple: true, muted: false, controls: true , width: "50%", height: "50%" if blog.video.present? %> </div>
 </strong>
 </p>
+<p> 
+  <audio src= "<%= "#{blog.file}" %>" controls=""> <a src="<%= "#{blog.file}"  %>">ダウンロード</a> </audio>
+</p>
 <p> <strong>
   <% blog.images.each do |image| %>
   <%= image_tag image, class: "image", width: '25%', height: '25%' %>
