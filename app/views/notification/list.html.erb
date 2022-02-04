@@ -1,50 +1,81 @@
-<div class="right"> <%= link_to 'トップページ', root_path, class: "btn btn-primary" %> <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %> <%= link_to 'ブログ', blogs_path, class: "btn btn-primary" %> <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %>
-  <% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-  <% end %>
+<div class="right">
+    <%= link_to 'トップページ', root_path, class: "btn btn-primary" %>
+    <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %>
+    <%= link_to 'ブログ', blogs_path, class: "btn btn-primary" %>
+    <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+    <% end %>
 </div>
-<br/>
-<div class="nyasocom2_logo"> <%= image_tag 'nyasocom2.jpg', :size => "105x105", skip_pipeline: true %> </div>
+<br />
+<div class="nyasocom2_logo">
+    <%= image_tag 'nyasocom2.jpg', :size => "105x105", skip_pipeline: true %>
+</div>
 <h2> さらしなにっき ~ にゃそこん２ ~ </h2>
-<br/>
+<br />
 <% @blogs.each do |blog| %>
-<p> 
-<strong>
-<h2><%= blog.days %></h2>
-</strong>
+<p>
+    <strong>
+        <h2>
+            <%= blog.days %>
+        </h2>
+    </strong>
 </p>
-<p> 
-<strong>
-<h3><%= blog.title %></h3>
-</strong>
+<p>
+    <strong>
+        <h3>
+            <%= blog.title %>
+        </h3>
+    </strong>
 </p>
-<p> <strong> <%= image_tag(blog.image.url) if blog.image.present? %> </strong> </p>
-<p> 
-<strong>
-<div class="video-player"> <%= video_tag blog.video.url, autoplay: false, multiple: true, muted: false, controls: true , width: "50%", height: "50%" if blog.video.present? %> </div>
-</strong>
-</p>
-<p> <%= audio_tag(blog.file) if blog.file.present? %> </p>
 <p> <strong>
-  <% blog.images.each do |image| %>
-  <%= image_tag image, class: "image", width: '25%', height: '25%' %>
-  <% end %>
-  </strong> </p>
-<p><%= markdown(blog.memo).html_safe %></p>
-<td><div align="left"> <%= link_to '新規作成', new_blog_path, class: "btn btn-success btn-sm" %> <%= link_to '閲覧', blog, class: "btn btn-primary btn-sm" %> <%= link_to '編集', edit_blog_path(blog), class: "btn btn-info btn-sm" %> <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-warning btn-sm" %> <%= link_to('再読込', 'javascript:void(0);', onclick: "window.location.reload();", class: "btn btn-dark btn-sm") %> <%= link_to '一覧', blogs_path, class: "btn btn-danger btn-sm" %>
-    <tr id="blog_<%= blog.id %>">
-      <% if current_user.liked_by?(blog.id) %>
-      <td><%= link_to destroy_like_path(blog), class: "like-link", method: :DELETE, remote: true, data: {"turbolinks" => false}  do %> <i class="fa fa-heart unlike-btn"></i>
+        <%= image_tag(blog.image.url) if blog.image.present? %> </strong> </p>
+<p>
+    <strong>
+        <div class="video-player">
+            <%= video_tag blog.video.url, autoplay: false, multiple: true, muted: false, controls: true , width: "50%", height: "50%" if blog.video.present? %>
+        </div>
+    </strong>
+</p>
+<p>
+    <%= audio_tag(blog.file) if blog.file.present? %>
+</p>
+<p> <strong>
+        <% blog.images.each do |image| %>
+        <%= image_tag image, class: "image", width: '25%', height: '25%' %>
         <% end %>
-        <%= blog.likes.count %></td>
-      <% else %>
-      <td><%= link_to create_like_path(blog), class: "like-link", method: :POST, remote: true, data: {"turbolinks" => false}  do %> <i class="fa fa-heart like-btn"></i>
-        <% end %>
-        <%= blog.likes.count %></td>
-      <% end %>
-    </tr>
-  </div></td>
+    </strong> </p>
+<p>
+    <%= markdown(blog.memo).html_safe %>
+</p>
+<td>
+    <div align="left">
+        <%= link_to '新規作成', new_blog_path, class: "btn btn-success btn-sm" %>
+        <%= link_to '閲覧', blog, class: "btn btn-primary btn-sm" %>
+        <%= link_to '編集', edit_blog_path(blog), class: "btn btn-info btn-sm" %>
+        <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-warning btn-sm" %>
+        <%= link_to('再読込', 'javascript:void(0);', onclick: "window.location.reload();", class: "btn btn-dark btn-sm") %>
+        <%= link_to '一覧', blogs_path, class: "btn btn-danger btn-sm" %>
+        <tr id="blog_<%= blog.id %>">
+            <% if current_user.liked_by?(blog.id) %>
+            <td>
+                <%= link_to destroy_like_path(blog), class: "like-link", method: :DELETE, remote: true, data: {"turbolinks" => false}  do %> <i class="fa fa-heart unlike-btn"></i>
+                <% end %>
+                <%= blog.likes.count %>
+            </td>
+            <% else %>
+            <td>
+                <%= link_to create_like_path(blog), class: "like-link", method: :POST, remote: true, data: {"turbolinks" => false}  do %> <i class="fa fa-heart like-btn"></i>
+                <% end %>
+                <%= blog.likes.count %>
+            </td>
+            <% end %>
+        </tr>
+    </div>
+</td>
 <% end %>
-<br/>
-<div class="left"> <%= paginate @blogs %> </div>
-<br/>
+<br />
+<div class="left">
+    <%= paginate @blogs %>
+</div>
+<br />

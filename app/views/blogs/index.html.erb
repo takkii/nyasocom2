@@ -1,63 +1,91 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <div class="nav-link">外部リンク<span class="sr-only">(current)</span></div>
-      </li>
-      <li class="nav-item"> <a class="nav-link" href="https://www.vector.co.jp/vpack/browse/person/an060630.html" target="_blank" rel="noopener noreferrer">Vector (自己紹介)<span class="sr-only">(current)</span></a> </li>
-      <li class="nav-item"> <a class="nav-link" href="https://standb.herokuapp.com/" target="_blank" rel="noopener noreferrer">nyasocom (RSSアンテナ)</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="https://github.com/takkii" target="_blank" rel="noopener noreferrer">GitHub (ID: takkii)</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="https://gitlab.com/nekoja" target="_blank" rel="noopener noreferrer">GitLab (ID: nekoja)</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="https://bitbucket.org/takkii/" target="_blank" rel="noopener noreferrer">BitBuckets (ID: takkii)</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="https://takkii.hatenablog.com/" target="_blank" rel="noopener noreferrer">はてなブログ (環境構築)</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="https://rubyist.hatenablog.com/" target="_blank" rel="noopener noreferrer">はてなブログ (アナウンス)</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="https://qiita.com/takkii" target="_blank" rel="noopener noreferrer">Qiita (ID: takkii)</a> </li>
-    </ul>
-  </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <div class="nav-link">外部リンク<span class="sr-only">(current)</span></div>
+            </li>
+            <li class="nav-item"> <a class="nav-link" href="https://www.vector.co.jp/vpack/browse/person/an060630.html" target="_blank" rel="noopener noreferrer">Vector (自己紹介)<span class="sr-only">(current)</span></a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://standb.herokuapp.com/" target="_blank" rel="noopener noreferrer">nyasocom (RSSアンテナ)</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://github.com/takkii" target="_blank" rel="noopener noreferrer">GitHub (ID: takkii)</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://gitlab.com/nekoja" target="_blank" rel="noopener noreferrer">GitLab (ID: nekoja)</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://bitbucket.org/takkii/" target="_blank" rel="noopener noreferrer">BitBuckets (ID: takkii)</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://takkii.hatenablog.com/" target="_blank" rel="noopener noreferrer">はてなブログ (環境構築)</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://rubyist.hatenablog.com/" target="_blank" rel="noopener noreferrer">はてなブログ (アナウンス)</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://qiita.com/takkii" target="_blank" rel="noopener noreferrer">Qiita (ID: takkii)</a> </li>
+        </ul>
+    </div>
 </nav>
 <br />
-<div class="right"> <%= link_to 'トップページ', root_path, class: "btn btn-primary" %> <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %> <%= link_to '図書室', books_url, class: "btn btn-primary" %> <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %>
-  <% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-  <% end %>
+<div class="right">
+    <%= link_to 'トップページ', root_path, class: "btn btn-primary" %>
+    <%= link_to '新規追加', new_book_path, class: "btn btn-primary" %>
+    <%= link_to '図書室', books_url, class: "btn btn-primary" %>
+    <%= link_to "CSV (SJIS)", books_path(format: :csv), class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+    <% end %>
 </div>
 <h2>更級日記 ~ nyasocom2 ~ </h2>
 <br />
 <div class="left_search_icon">
-  <p>表示 : <%= @blogs.count %> 行 (データ数)</p>
+    <p>表示 :
+        <%= @blogs.count %> 行 (データ数)</p>
 </div>
 <br />
 <div class="left_search">
-<ul>
-<%= form_tag(blogs_path, method: "get") do %> <i class="fab fa-searchengin"></i> : <%= text_field_tag :search, '', placeholder: 'タイトルを入力' %> <%= submit_tag '検索', :name => '鬼灯' %>
-<% end %>
+    <ul>
+        <%= form_tag(blogs_path, method: "get") do %> <i class="fab fa-searchengin"></i> :
+        <%= text_field_tag :search, '', placeholder: 'タイトルを入力' %>
+        <%= submit_tag '検索', :name => '鬼灯' %>
+        <% end %>
 </div>
 <br />
-<%= link_to '新規作成', new_blog_path, class: "btn btn-primary" %> <%= link_to '投稿一覧', notification_list_path, class: "btn btn-success" %> <br/>
+<%= link_to '新規作成', new_blog_path, class: "btn btn-primary" %>
+<%= link_to '投稿一覧', notification_list_path, class: "btn btn-success" %> <br />
 <div class="left_blog">
-  <table width="85%">
-    <thead>
-      <tr>
-        <th><div align="center">日時</div></th>
-        <th><div align="center">タイトル</div></th>
-        <th></th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @blogs.each do |blog| %>
-      <tr>
-        <td><div align="center"><%= blog.days %></div></td>
-        <td><div align="center"><%= blog.title %></div></td>
-        <td><div align="left"><%= link_to '閲覧', blog, class: "btn btn-primary" %> <%= link_to '編集', edit_blog_path(blog), class: "btn btn-info" %> <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-warning" %></div></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <table width="85%">
+        <thead>
+            <tr>
+                <th>
+                    <div align="center">日時</div>
+                </th>
+                <th>
+                    <div align="center">タイトル</div>
+                </th>
+                <th></th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @blogs.each do |blog| %>
+            <tr>
+                <td>
+                    <div align="center">
+                        <%= blog.days %>
+                    </div>
+                </td>
+                <td>
+                    <div align="center">
+                        <%= blog.title %>
+                    </div>
+                </td>
+                <td>
+                    <div align="left">
+                        <%= link_to '閲覧', blog, class: "btn btn-primary" %>
+                        <%= link_to '編集', edit_blog_path(blog), class: "btn btn-info" %>
+                        <%= link_to '削除', blog, method: :delete, data: { confirm: '記事を削除してもよろしいですか？' }, class: "btn btn-warning" %>
+                    </div>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 </div>
 <br>
-<div class="left"> <%= paginate @blogs %> </div>
-<br/>
-<br/>
-<br/>
+<div class="left">
+    <%= paginate @blogs %>
+</div>
+<br />
+<br />
+<br />

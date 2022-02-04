@@ -1,45 +1,47 @@
 <p>
-<div class="leaf">
-  <p id="notice"><%= notice %></p>
-  <br/>
-  <p>
-    <strong>ISBN:</strong>
-    <%= @book.isbn %>
-  </p>
-  <br/>
-  <p>
-    <strong>題名:</strong>
-    <%= @book.title %>
-  </p>
-  <br/>
-  <p>
-    <strong>価格:</strong>
-    <%= @book.price %>
-  </p>
-  <br/>
-  <p>
-    <strong>著者:</strong>
-    <%= @book.publish %>
-  </p>
-  <br/>
-  <p>
-    <strong>出版日:</strong>
-    <%= @book.published %>
-  </p>
-  <br/>
-  <p>
-    <strong>購入:</strong>
-    <%= @book.cd %>
-  </p>
-  <br/>
-  <p>
-    <strong>写真:</strong>
-    <%= image_tag(@book.picture.url) if @book.picture.present? %>
-  </p>
-  <br/>
-  <%= link_to '編集', edit_book_path(@book), class: "btn btn-info" %>
-  <%= link_to '戻る', books_path, class: "btn btn-primary" %>
-</div>
+    <div class="leaf">
+        <p id="notice">
+            <%= notice %>
+        </p>
+        <br />
+        <p>
+            <strong>ISBN:</strong>
+            <%= @book.isbn %>
+        </p>
+        <br />
+        <p>
+            <strong>題名:</strong>
+            <%= @book.title %>
+        </p>
+        <br />
+        <p>
+            <strong>価格:</strong>
+            <%= @book.price %>
+        </p>
+        <br />
+        <p>
+            <strong>著者:</strong>
+            <%= @book.publish %>
+        </p>
+        <br />
+        <p>
+            <strong>出版日:</strong>
+            <%= @book.published %>
+        </p>
+        <br />
+        <p>
+            <strong>購入:</strong>
+            <%= @book.cd %>
+        </p>
+        <br />
+        <p>
+            <strong>写真:</strong>
+            <%= image_tag(@book.picture.url) if @book.picture.present? %>
+        </p>
+        <br />
+        <%= link_to '編集', edit_book_path(@book), class: "btn btn-info" %>
+        <%= link_to '戻る', books_path, class: "btn btn-primary" %>
+    </div>
 </p>
-<br/><br/><br/><br/>
-<br/><br/><br/><br/>
+<br /><br /><br /><br />
+<br /><br /><br /><br />
