@@ -1,5 +1,12 @@
 ## Project Name, nyasocom2.
 
+```markdown
+# env
+・ ubuntu server
+・ ruby-3.1.0 + YJIT
+・ rails-7.0.1
+```
+
 _nyasocomのRails版_
 
 ※ nyasocom_betaの名称も使用しています。
@@ -18,66 +25,37 @@ _nyasocomのRails版_
 
 > 動作確認
 
-<s>- Windows ×</s>
-<s>※ 起動時、no implicit conversion of Hash into Integerを踏んでerror画面へ変移するため。</s>
-
 ```markdown
--Windows ○
-RubyInstaller2 + MSYS2で動作確認
-他に、Windows版MySQL8を入れる必要あり。他、依存ライブラリも。
-下記に、mysql2を入れる手順表示。
-
-- UNIX系統 (MacOS and Ubuntu 20.04(wsl) ) ○
-※ main and develop branch → MacOS
-※ wsl branch → ubuntu20.04(wsl)
+- Windows ○
+- UNIX系 ○
 ```
 
 ### ログインするためには
 
 ```markdown
-> .bashrc or etc shell.
-export NYASOCOM_BETA_DATABASE_PASSWORD="database password"
+# 環境構築
+cp settings.sample.yml config/settings.yml
 
-> Google アカウントを登録
-
-config/environments/development.rb
-
-> 67-68 行目 認証時 Google アカウント指定
-:username => Settings.gmail[:user_name],
-:password => Settings.gmail[:password],
-
-> config/database.yml
-password: <%= Settings.database.password %>
-
-> 環境構築
-> cp settings.sample.yml config/settings.yml
-
+# settings.yml
 database:
   password: "Your_Local_MySQL_Password"
 ```
 
-### Google セキュリティ管理
+#### ログイン時の認証メールをブラウザで処理できます。
 
-[Google_Access_Admin](https://www.google.com/settings/security/lesssecureapps)
+[letter_opener](http://tk2-410-46434.vs.sakura.ne.jp:3000/mail/letter/web/open/engine)
 
-```markdown
-> セキュリティを下げておく → 認証後、設定を戻す
-
-sign up → Gmail and Gmail パスワード登録
-→ Gmail に本登録メールが届く → 認証
-```
-
-<s>Gmail でメールが受信できなかった場合</s>
-
-※ HEADでは確認用メール認証を解除しました。
+#### 注意
 
 ```markdown
-rails server 実行コンソール内
+※ アカウント登録時に認証するとき、
 
-<p>Welcome karuma.reason@gmail.com!</p>
-<p>You can confirm your account email through the link below:</p>
-<p><a href="　(URL and TOKEN)　"> (URL and TOKENをブラウザに貼り付けで本人確認できる) Confirm my account</a></p>
+letter_opener側がlocalhostで返すので、
+
+URLをサーバのドメインに修正し実行する必要があります。
 ```
+
+他の認証でも、同じように処理します。
 
 ### 管理者権限付与
 
@@ -86,24 +64,6 @@ rails c
 
 user = User.find(1) # 管理者対象を User(id 番号指定)
 user.update_attribute(:admin, "true") # 指定した番号の User を登録
-```
-
-### 管理者のみ管理画面設定 (11~12 行目)
-
-> config/initializers/rails_admin.rb
-
-```markdown
-## == CancanCan ==
-
-config.authorize_with :cancancan
-```
-
-### macports (対処: mysql57)
-
-```markdown
-Mysql2::Error::ConnectionError: Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
-
-sudo ln -s /opt/local/var/run/mysql57/mysqld.sock /tmp/mysql.sock
 ```
 
 ### 新レイアウト適用
@@ -214,7 +174,6 @@ sudo yum -y install ImageMagick ImageMagick-devel
 ----------------
 
 rails s -b 0.0.0.0
-
 ```
 
 <s>sudo ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock</s>
@@ -261,6 +220,52 @@ rails db:my_default_db
 ```markdown
 gem install mysql2 --platform=ruby -- '--with-mysql-lib="C:\Users\sudok\mysql-connector-c-6.1.11-win32\lib" --with-mysql-include="C:\Users\sudok\mysql-connector-c-6.1.11-win32\include" --with-mysql-dir="C:\Users\sudok\mysql-connector-c-6.1.11-win32"'
 ```
+
+```markdown
+ALTER DATABASE nyasocom_beta_development DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
+
+#### リストア、Powershell(例)
+
+```markdown
+cmd /c 'mysql -u root -p < backup/2022-01-01_nyasocom2_backup.dump'
+```
+
+### キャッシュ
+
+```markdown
+rake tmp:cache:clear
+```
+
+#### Intel Mac
+
+```markdown
+# mysql2
+gem install mysql2 -v '0.5.3' -- --with-opt-dir=$(brew --prefix openssl) --with-ldflags=-L/usr/local/Cellar/zstd/1.5.2/lib
+```
+
+[Qiita_mysql2](https://qiita.com/takkii/items/a58898ad1f6128cd127c)
+
+```markdown
+# database.yml
+socket: /tmp/mysql.sock 
+```
+
+#### ローカル版
+
+[letter_opener](http://localhost:3000/mail/letter/web/open/engine)
+
+※ 修正個所、にゃそこん２のログインまわりiMacだとレイアウト崩れあり。
+
+#### VPSサーバ側SOXインストール
+
+```markdown
+sudo apt-get install alsa-utils sox libsox-fmt-all
+```
+
+#### Windows側SOXインストール
+
+[Win_SOX](https://sourceforge.net/projects/sox/) | [依存DLL](https://www.videohelp.com/software?d=sox-14.4.0-libmad-libmp3lame.zip)
 
 ### 鬼灯のレイアウト
 
