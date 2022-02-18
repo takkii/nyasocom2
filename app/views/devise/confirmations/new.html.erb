@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "books", :media => "all" %>
 <div class="loginc">
-    <h2>アカウントをリセット</h2>
+  <div class="container">
+  <h2>リセット</h2>
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= devise_error_messages! %>
     <div class="field">
@@ -12,5 +14,6 @@
     <% end %>
     <br />
     <%= render "devise/shared/links" %>
-</div>
+  </div>
+  </div>
 <br />
