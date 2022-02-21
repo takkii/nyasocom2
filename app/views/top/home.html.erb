@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <%= csrf_meta_tag %>
-    <%= javascript_importmap_tags %>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <%= favicon_link_tag 'hozukicon.ico', skip_pipeline: true %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-    <%= favicon_link_tag 'hozukicon.ico', skip_pipeline: true %>
+    <%= csrf_meta_tag %>
+    <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </head>
 <div class="admin_buttons">
     <%= link_to('再読込', 'javascript:void(0);', onclick: "window.location.reload();", class: "btn btn-success")  %>
