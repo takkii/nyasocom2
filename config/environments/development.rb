@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << "tk2-410-46434.vs.sakura.ne.jp"
+  # config.hosts << "tk2-410-46434.vs.sakura.ne.jp"
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
