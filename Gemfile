@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 # ruby_version
-ruby '3.1.2'
+ruby '3.4.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 7.0.2.4'
+gem 'rails', '>= 6.1.7.10'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'mysql2', '0.5.6'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -51,8 +51,14 @@ gem 'bootstrap'
 gem 'bootswatch'
 
 # japanese env
-gem 'mimemagic', '~> 0.3.10'
-gem 'rails-i18n', '~> 7.0.1'
+#gem 'mimemagic', '~> 0.3.10'
+gem 'rails-i18n', '~> 6.0.0'
+
+# Logger Error
+gem 'concurrent-ruby', '1.3.4'
+
+# You can add mutex_m to your Gemfile or gemspec to silence this warning.
+gem 'mutex_m'
 
 # devise
 gem 'devise'
@@ -60,16 +66,16 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 # admin
-gem "administrate"
+gem 'administrate'
 gem 'cancan'
 
 # pagenate
-gem "nokogiri"
+gem 'nokogiri'
 gem 'kaminari'
 gem 'config'
 
 # markdown
-gem "redcarpet", ">= 3.5.1"
+gem 'redcarpet', '>= 3.5.1'
 gem 'coderay'
 
 # erb-linter
